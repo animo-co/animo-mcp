@@ -1,0 +1,23 @@
+{
+    "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+    "name": "co.animo/animo",
+    "title": "Animo",
+    "description": "Hosted MCP for Animo events: create, ticket, QA, and publish via agents.",
+    "version": "1.0.0",
+    "websiteUrl": "https://animo.co",
+    "remotes": [
+        {
+            "type": "streamable-http",
+            "url": "https://app.animo.co/mcp",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "description": "Optional personal access token as `Bearer {token}` from Animo \u2192 User settings \u2192 API tokens. Chat clients can use OAuth (scope mcp:use) instead and should omit this header so the client can complete the sign-in flow.",
+                    "isRequired": false,
+                    "isSecret": true,
+                    "format": "string"
+                }
+            ]
+        }
+    ]
+}
